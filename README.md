@@ -18,7 +18,11 @@ https://www.figma.com/file/6Y8alLS71OVmVLUx3RTsbe/web-project?t=3FOyjlo3RgudiYmq
 
 ## Как запустить
 Клоним репозиторий -> вводим в терминале следующие команды:
+
 cd course-work-web
+
 cd course-work
+
 npm i --force
+
 npm run start
