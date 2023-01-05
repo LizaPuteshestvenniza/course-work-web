@@ -21,18 +21,17 @@ function Payment() {
 	const [processing, setProcessing] = useState("");
 	const [error, setError] = useState(null);
 	const [disabled, setDisabled] = useState(true);
-	const [clientSecret, setClientSecret] = useState(true);
-
+	const [clientSecret, setClientSecret] = useState();
 
 	useEffect(()=>{
 		const getClientSecret = async () => {
 			const response = await axios({
 				method:'post',
-				url:`/payments/create?total=${getBasketTotal(basket)*100}`
+				url:`/payments/create?total=${(getBasketTotal(basket)*100)}`
 			});
 			setClientSecret(response.data.clientSecret)
 
-		}
+		};
 		getClientSecret();
 	},[basket])
 
@@ -50,8 +49,8 @@ function Payment() {
 			setSucceeded(true);
 			setError(null);
 			setProcessing(false);
-			//history('/orders', { replace: true })
-			history.replace('/orders')
+			history('/orders', { replace: true })
+			//history.replace('/orders')
 		})
 
 	}
