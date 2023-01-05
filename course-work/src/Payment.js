@@ -17,12 +17,6 @@ function Payment() {
 	const stripe = useStripe();
 	const elements = useElements();
 
-	// const {error,setError} = useState(null);
-	// const {disabled, setDisabled} = useState(true);
-	// const {clientSecret, setClientSecret} = useState(true);
-	//
-	// const {succeeded, setSucceeded} = useState(false);
-	// const {processing, setProcessing} = useState ("");
 	const [succeeded, setSucceeded] = useState(false);
 	const [processing, setProcessing] = useState("");
 	const [error, setError] = useState(null);
@@ -56,7 +50,7 @@ function Payment() {
 			setSucceeded(true);
 			setError(null);
 			setProcessing(false);
-			history('/orders', { replace: true }) //чекнуть
+			history('/orders', { replace: true })
 			// history('/orders')
 		})
 
@@ -65,7 +59,7 @@ function Payment() {
 
 
 
-	const handleCheck = e => {
+	const handleChange = e => {
 
 		setDisabled(e.empty);
 		setError(e.error ? e.error.message : "");
@@ -103,14 +97,12 @@ function Payment() {
 					</div>
 					<div className='payment_details'>
 						<form onSubmit={handleSubmit}>
-							<CardElement onChange={handleCheck}/>
+							<CardElement onChange={handleChange}/>
 
 							<div className='payment_priceContainer'>
 								<CurrencyFormat
 									renderText={(value)=>(
-										<>
 											<h3>Order Total: {value}</h3>
-										</>
 									)}
 									decoimalScale={2}
 									value={getBasketTotal(basket)}

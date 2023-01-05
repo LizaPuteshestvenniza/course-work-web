@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const instance = axios.create({
+const instance = axios.create( {
     baseURL: 'http://127.0.0.1:5001/phone-shop-84650/us-central1/api'
 });
 
