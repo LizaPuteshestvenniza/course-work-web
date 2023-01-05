@@ -41,7 +41,7 @@ function Payment() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		setProcessing(true);
-
+		console.log("here");
 		const payload = await stripe.confirmCardPayment(clientSecret, {
 			payment_method: {
 				card: elements.getElement(CardElement)
@@ -50,8 +50,8 @@ function Payment() {
 			setSucceeded(true);
 			setError(null);
 			setProcessing(false);
-			history('/orders', { replace: true })
-			// history('/orders')
+			//history('/orders', { replace: true })
+			history.replace('/orders')
 		})
 
 	}
