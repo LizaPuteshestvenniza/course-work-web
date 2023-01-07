@@ -49,7 +49,8 @@ function Payment() {
 			setSucceeded(true);
 			setError(null);
 			setProcessing(false);
-			history('/orders', { replace: true })
+			history('/orders');
+			// history('/payment', { replace: true })
 			//history.replace('/orders')
 		})
 
