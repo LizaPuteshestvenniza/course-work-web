@@ -17,6 +17,7 @@
     "@stripe/react-stripe-js": "^1.16.2",
     "@stripe/stripe-js": "^1.46.0",
     "cors": "^2.8.5",
+    "firebase": "^9.15.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0"
   },

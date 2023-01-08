@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import Home from './Home';
 import Payment from './Payment';
+import Orders from './Orders';
 import Checkout from "./Checkout";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Login from './Login';
@@ -42,6 +43,7 @@ function App() {
           <Route path="/payment" element={<><Header/>              <Elements stripe={promise}>
             <Payment/>
           </Elements></>} />
+          <Route path="/orders" element={<><Header/><Orders /></>} />
           <Route path="/login" element={<Login/>} />
           {/*<Route path="/login" element{}/>*/}
         </Routes>
